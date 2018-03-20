@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "MainViewController.h"
+#import "Util.h"
+#import "AppDelegate.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    MainViewController* vc_main;
+}
+
+@property (nonatomic, strong) AppDelegate*                      app;
 
 @end
 
@@ -16,9 +23,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // TODO: 新手引导页
+    [self enterApp];
 }
 
+-(void)enterApp {
+    vc_main = [[MainViewController alloc]init];
+    _app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    _app.window.rootViewController = vc_main;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -13,6 +13,10 @@
 		AFE3C5F12060FD7600EEF0F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE3C5F02060FD7600EEF0F6 /* Assets.xcassets */; };
 		AFE3C5F72060FD7600EEF0F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C5F62060FD7600EEF0F6 /* main.m */; };
 		AFE3C6002061125900EEF0F6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFE3C5FF2061125900EEF0F6 /* README.md */; };
+		AFE3C6062061143000EEF0F6 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C6052061143000EEF0F6 /* Util.m */; };
+		AFE3C609206118EF00EEF0F6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C608206118EF00EEF0F6 /* MainViewController.m */; };
+		AFE3C60C20611B9700EEF0F6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C60B20611B9700EEF0F6 /* HomeViewController.m */; };
+		AFE3C60F20611BC500EEF0F6 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C60E20611BC500EEF0F6 /* OrderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		AFE3C5F52060FD7600EEF0F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE3C5F62060FD7600EEF0F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFE3C5FF2061125900EEF0F6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AFE3C6042061143000EEF0F6 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		AFE3C6052061143000EEF0F6 /* Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		AFE3C607206118EF00EEF0F6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		AFE3C608206118EF00EEF0F6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		AFE3C60A20611B9700EEF0F6 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		AFE3C60B20611B9700EEF0F6 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		AFE3C60D20611BC500EEF0F6 /* OrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		AFE3C60E20611BC500EEF0F6 /* OrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,16 +71,48 @@
 		AFE3C5E62060FD7600EEF0F6 /* JHotelIOS */ = {
 			isa = PBXGroup;
 			children = (
+				AFE3C603206113C400EEF0F6 /* Motel */,
+				AFE3C602206113B700EEF0F6 /* View */,
+				AFE3C601206113A400EEF0F6 /* ViewController */,
 				AFE3C5E72060FD7600EEF0F6 /* AppDelegate.h */,
 				AFE3C5E82060FD7600EEF0F6 /* AppDelegate.m */,
 				AFE3C5EA2060FD7600EEF0F6 /* ViewController.h */,
 				AFE3C5EB2060FD7600EEF0F6 /* ViewController.m */,
-				AFE3C5ED2060FD7600EEF0F6 /* Main.storyboard */,
+				AFE3C6042061143000EEF0F6 /* Util.h */,
+				AFE3C6052061143000EEF0F6 /* Util.m */,
 				AFE3C5F02060FD7600EEF0F6 /* Assets.xcassets */,
 				AFE3C5F52060FD7600EEF0F6 /* Info.plist */,
 				AFE3C5F62060FD7600EEF0F6 /* main.m */,
+				AFE3C5ED2060FD7600EEF0F6 /* Main.storyboard */,
 			);
 			path = JHotelIOS;
+			sourceTree = "<group>";
+		};
+		AFE3C601206113A400EEF0F6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AFE3C607206118EF00EEF0F6 /* MainViewController.h */,
+				AFE3C608206118EF00EEF0F6 /* MainViewController.m */,
+				AFE3C60A20611B9700EEF0F6 /* HomeViewController.h */,
+				AFE3C60B20611B9700EEF0F6 /* HomeViewController.m */,
+				AFE3C60D20611BC500EEF0F6 /* OrderViewController.h */,
+				AFE3C60E20611BC500EEF0F6 /* OrderViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AFE3C602206113B700EEF0F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AFE3C603206113C400EEF0F6 /* Motel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Motel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +189,10 @@
 				AFE3C5EC2060FD7600EEF0F6 /* ViewController.m in Sources */,
 				AFE3C5F72060FD7600EEF0F6 /* main.m in Sources */,
 				AFE3C5E92060FD7600EEF0F6 /* AppDelegate.m in Sources */,
+				AFE3C609206118EF00EEF0F6 /* MainViewController.m in Sources */,
+				AFE3C60F20611BC500EEF0F6 /* OrderViewController.m in Sources */,
+				AFE3C6062061143000EEF0F6 /* Util.m in Sources */,
+				AFE3C60C20611B9700EEF0F6 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
