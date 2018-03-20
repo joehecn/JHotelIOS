@@ -12,7 +12,7 @@
 		AFE3C5EF2060FD7600EEF0F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE3C5ED2060FD7600EEF0F6 /* Main.storyboard */; };
 		AFE3C5F12060FD7600EEF0F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE3C5F02060FD7600EEF0F6 /* Assets.xcassets */; };
 		AFE3C5F72060FD7600EEF0F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C5F62060FD7600EEF0F6 /* main.m */; };
-		AFE3C5FE206110C700EEF0F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE3C5FD206110C700EEF0F6 /* Default-568h@2x.png */; };
+		AFE3C6002061125900EEF0F6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFE3C5FF2061125900EEF0F6 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		AFE3C5F02060FD7600EEF0F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFE3C5F52060FD7600EEF0F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE3C5F62060FD7600EEF0F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AFE3C5FD206110C700EEF0F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AFE3C5FF2061125900EEF0F6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,7 @@
 		AFE3C5DB2060FD7600EEF0F6 = {
 			isa = PBXGroup;
 			children = (
-				AFE3C5FD206110C700EEF0F6 /* Default-568h@2x.png */,
+				AFE3C5FF2061125900EEF0F6 /* README.md */,
 				AFE3C5E62060FD7600EEF0F6 /* JHotelIOS */,
 				AFE3C5E52060FD7600EEF0F6 /* Products */,
 			);
@@ -129,9 +129,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE3C6002061125900EEF0F6 /* README.md in Resources */,
 				AFE3C5F12060FD7600EEF0F6 /* Assets.xcassets in Resources */,
 				AFE3C5EF2060FD7600EEF0F6 /* Main.storyboard in Resources */,
-				AFE3C5FE206110C700EEF0F6 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
