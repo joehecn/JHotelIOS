@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     vc_home = [[HomeViewController alloc]init];
     vc_home.tabBarItem.title = @"首页";
     vc_home.tabBarItem.image = [UIImage imageNamed:@"home"];

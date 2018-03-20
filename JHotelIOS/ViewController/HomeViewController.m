@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "Util.h"
 
 @interface HomeViewController ()
 
@@ -16,7 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // 获取并储存导航栏高度 一般为 44
+    [[Util getInstance]setNavigationBarHeight:self.navigationController.navigationBar.frame.size.height];
+    
+    // 隐藏 navigation
+    self.navigationController.navigationBar.hidden = true;
+    
+    NSLog(@"%f", [[Util getInstance]getSafeXHasNavigationBar:false]);
+    NSLog(@"%f", [[Util getInstance]getSafeXHasNavigationBar:true]);
+    
+    UIView* redView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, J_w, 100)];
+    redView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:redView];
+    
+    UIView* blueView = [[UIView alloc]initWithFrame:CGRectMake(0, 100, J_w, 100)];
+    blueView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:blueView];
 }
 
 - (void)didReceiveMemoryWarning {
