@@ -23,6 +23,9 @@
 @property(nonatomic, strong)BtnView* bv_location;
 @property(nonatomic, strong)BtnView* bv_chooseCity;
 @property(nonatomic, strong)UILabel* lb_city;
+@property(nonatomic, strong)BtnView* bv_chooseDates;
+@property(nonatomic, strong)BtnView* bv_keyword;
+@property(nonatomic, strong)UIButton* bt_search;
 
 @property(nonatomic, strong)UIView* jv_promise;
 
@@ -38,7 +41,7 @@
         
         // 返回键
         UIButton* bt_back = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 24, 24)];
-        [bt_back setBackgroundImage:[UIImage imageNamed:@"order_24pt"] forState:UIControlStateNormal];
+        [bt_back setBackgroundImage:[UIImage imageNamed:@"arrowLeft_24pt"] forState:UIControlStateNormal];
         [bt_back addTarget:self action:@selector(exitApplication) forControlEvents:UIControlEventTouchUpInside];
         [_v_header addSubview:bt_back];
         
@@ -69,7 +72,7 @@
 
 -(BtnView *)bv_location {
     if (!_bv_location) {
-        _bv_location = [[BtnView alloc]initWithPoint:CGPointMake(0, 16) andWidth:w_main / 2 imageName:@"order_24pt" WithType:BtnViewTypeOne];
+        _bv_location = [[BtnView alloc]initWithPoint:CGPointMake(0, 16) andWidth:w_main / 2 imageName:@"location_24pt" titleColor:J_colorGray WithType:BtnViewTypeOne];
         [_bv_location setTitle:@"我的位置"];
     }
     return _bv_location;
@@ -77,7 +80,7 @@
 
 -(BtnView *)bv_chooseCity {
     if (!_bv_chooseCity) {
-        _bv_chooseCity = [[BtnView alloc]initWithPoint:CGPointMake(w_main / 2, 16) andWidth:w_main / 2 imageName:@"order_24pt" WithType:BtnViewTypeTwo];
+        _bv_chooseCity = [[BtnView alloc]initWithPoint:CGPointMake(w_main / 2, 16) andWidth:w_main / 2 imageName:@"chooseCity_24pt" titleColor:J_colorGray WithType:BtnViewTypeTwo];
         [_bv_chooseCity setTitle:@"选择城市"];
     }
     return _bv_chooseCity;
@@ -94,12 +97,45 @@
     return _lb_city;
 }
 
+-(BtnView *)bv_chooseDates {
+    if (!_bv_chooseDates) {
+        CGFloat y = self.lb_city.frame.origin.y + self.lb_city.frame.size.height + 8 + 1 + 8;
+        _bv_chooseDates = [[BtnView alloc]initWithPoint:CGPointMake(0, y) andWidth:w_main imageName:@"calendar_24pt" titleColor:[UIColor blackColor] WithType:BtnViewTypeThird];
+        [_bv_chooseDates setTitle:@"3月21日-3月22日"];
+        [_bv_chooseDates setSubtitle:@"今天入住 明天离店 (1晚)"];
+    }
+    return _bv_chooseDates;
+}
+
+-(BtnView *)bv_keyword {
+    if (!_bv_keyword) {
+        CGFloat y = self.bv_chooseDates.frame.origin.y + self.bv_chooseDates.frame.size.height + 8 + 1 + 16;
+        _bv_keyword = [[BtnView alloc]initWithPoint:CGPointMake(0, y) andWidth:w_main imageName:@"search_24pt" titleColor:[UIColor blackColor] WithType:BtnViewTypeTwo];
+        [_bv_keyword setTitle:@"五和大道南五和大道南五和大道南五和大道南五和大道南五和大道南30"];
+    }
+    return _bv_keyword;
+}
+
+-(UIButton *)bt_search {
+    if (!_bt_search) {
+        CGFloat x = 8;
+        CGFloat y = self.bv_keyword.frame.origin.y + self.bv_keyword.frame.size.height + 16 + 1 + 8;
+        _bt_search = [[UIButton alloc]initWithFrame:CGRectMake(x, y, w_main - x * 2, 44)];
+        [_bt_search setTitle:@"开始搜索" forState:UIControlStateNormal];
+        [_bt_search setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_bt_search setBackgroundColor:J_colorMain];
+        _bt_search.titleLabel.font = J_fontBig;
+        _bt_search.layer.cornerRadius = 5;
+    }
+    return _bt_search;
+}
+
 -(UIView *)v_main {
     if (!_v_main) {
         CGFloat y = self.iv_bg.frame.origin.y + self.iv_bg.frame.size.height;
         x_main = 8;
         w_main = J_w - x_main * 2;
-        CGFloat h = 300;
+        CGFloat h = 260;
         
         _v_main = [[UIView alloc]initWithFrame:CGRectMake(x_main, y, w_main, h)];
         _v_main.backgroundColor = [UIColor whiteColor];
@@ -110,20 +146,33 @@
         
         // 选择城市
         [_v_main addSubview:self.bv_chooseCity];
+//        __weak typeof (self) weakself = self;
+        self.bv_chooseCity.touchesBeganBtnView = ^() {
+            NSLog(@"选择城市");
+        };
         
         // label 深圳
         [_v_main addSubview:self.lb_city];
         
         // 分隔线
-        [_v_main addSubview:[self getLineViewWithY:self.lb_city.frame.origin.y + self.lb_city.frame.size.height + 2]];
+        [_v_main addSubview:[self getLineViewWithY:self.lb_city.frame.origin.y + self.lb_city.frame.size.height + 8]];
         
-//        UIButton* bt_search = [[UIButton alloc]initWithFrame:CGRectMake(x, x, w - x * 2, 44)];
-//        [bt_search setTitle:@"开始搜索" forState:UIControlStateNormal];
-//        [bt_search setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        [bt_search setBackgroundColor:J_colorMain];
-//        bt_search.titleLabel.font = J_fontBig;
-//        bt_search.layer.cornerRadius = 5;
-//        [_v_main addSubview:bt_search];
+        // 选择日期
+        [_v_main addSubview:self.bv_chooseDates];
+        
+        // 分隔线
+        [_v_main addSubview:[self getLineViewWithY:self.bv_chooseDates.frame.origin.y + self.bv_chooseDates.frame.size.height + 8]];
+        
+        // 关键词
+        [_v_main addSubview:self.bv_keyword];
+        
+        // 分隔线
+        [_v_main addSubview:[self getLineViewWithY:self.bv_keyword.frame.origin.y + self.bv_keyword.frame.size.height + 16]];
+        
+        // 搜索按钮
+        [_v_main addSubview:self.bt_search];
+        
+//        NSLog(@"%@", NSStringFromCGRect(self.bt_search.frame));
     }
     return _v_main;
 }
@@ -144,7 +193,7 @@
         CGFloat img_x = (J_w - (img_w + 10 + lb_width)) / 2;
         
         UIImageView* iv_promise = [[UIImageView alloc]initWithFrame:CGRectMake(img_x, 0, img_w, 24)];
-        iv_promise.image = [UIImage imageNamed:@"order_24pt"];
+        iv_promise.image = [UIImage imageNamed:@"promise_24pt"];
         [_jv_promise addSubview:iv_promise];
         
         CGFloat lb_x = img_x + img_w + 10;
@@ -156,7 +205,7 @@
 
 -(UIView *)getLineViewWithY:(CGFloat)y {
     UIView* lineView = [[UIView alloc]initWithFrame:CGRectMake(0, y, w_main, 1)];
-    lineView.backgroundColor = J_colorGray;
+    lineView.backgroundColor = J_colorGrayLight;
     return lineView;
 }
 

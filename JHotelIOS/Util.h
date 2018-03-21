@@ -25,6 +25,7 @@
  */
 #define J_colorMain [UIColor colorWithRed:63/255.0 green:81/255.0 blue:180/255.0 alpha:1.0]
 #define J_colorGray [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1.0]
+#define J_colorGrayLight [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1.0]
 
 /**
  * Font_size

@@ -16,10 +16,11 @@ typedef NS_ENUM(NSInteger, BtnViewType) {
 
 @interface BtnView : UIView
 
-//@property(nonatomic, copy)NSString* title;
-//@property(nonatomic, copy)NSString* subtitle;
-
--(instancetype)initWithPoint:(CGPoint)point andWidth:(CGFloat)width imageName:(NSString *)imageName WithType:(BtnViewType)type;
+-(instancetype)initWithPoint:(CGPoint)point andWidth:(CGFloat)width imageName:(NSString *)imageName titleColor:(UIColor *)titleColor WithType:(BtnViewType)type;
 -(void)setTitle:(NSString *)title;
+-(void)setSubtitle:(NSString *)subtitle;
+
+// block touchesBegan事件
+@property(nonatomic, copy) void(^touchesBeganBtnView)(void);
 
 @end
