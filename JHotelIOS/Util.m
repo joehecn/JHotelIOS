@@ -33,6 +33,10 @@ static id _instance;
     return _instance;
 }
 
+-(AppDelegate *)getApp {
+    return (AppDelegate *)[[UIApplication sharedApplication]delegate];
+}
+
 // 获取并储存导航栏高度，全局只需要设置一次
 -(void)setNavigationBarHeight:(CGFloat)height {
     if (navigationBarHeight != 0.0) {
@@ -40,8 +44,11 @@ static id _instance;
     }
     navigationBarHeight = height;
 }
+-(CGFloat)getNavigationBarHeight {
+    return navigationBarHeight;
+}
 // 获取顶部的安全高度
--(CGFloat)getSafeXHasNavigationBar:(BOOL)hasNavigationBar {
+-(CGFloat)getSafeYHasNavigationBar:(BOOL)hasNavigationBar {
     if (hasNavigationBar) {
         if (navigationBarHeight == 0.0) {
             @throw [NSException exceptionWithName:@"Util.getSafeXHasNavigationBar" reason:@"请先调用Util.setNavigationBarHeight方法" userInfo:nil];

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : BaseViewController
+
+// block 退出程序
+@property(nonatomic, copy) void(^exitApp)(void);
 
 @end

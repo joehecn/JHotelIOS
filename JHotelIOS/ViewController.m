@@ -9,13 +9,10 @@
 #import "ViewController.h"
 #import "MainViewController.h"
 #import "Util.h"
-#import "AppDelegate.h"
 
 @interface ViewController () {
     MainViewController* vc_main;
 }
-
-@property (nonatomic, strong) AppDelegate*                      app;
 
 @end
 
@@ -30,14 +27,12 @@
 
 -(void)enterApp {
     vc_main = [[MainViewController alloc]init];
-    _app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    _app.window.rootViewController = vc_main;
+    [[Util getInstance]getApp].window.rootViewController = vc_main;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

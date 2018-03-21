@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF6296142061FF6200C54627 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6296132061FF6200C54627 /* BaseViewController.m */; };
+		AF6296172062049300C54627 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6296162062049300C54627 /* BaseNavViewController.m */; };
+		AF62961A20625F1500C54627 /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF62961920625F1500C54627 /* BtnView.m */; };
 		AFE3C5E92060FD7600EEF0F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C5E82060FD7600EEF0F6 /* AppDelegate.m */; };
 		AFE3C5EC2060FD7600EEF0F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C5EB2060FD7600EEF0F6 /* ViewController.m */; };
 		AFE3C5EF2060FD7600EEF0F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE3C5ED2060FD7600EEF0F6 /* Main.storyboard */; };
@@ -20,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF6296122061FF6200C54627 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		AF6296132061FF6200C54627 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		AF6296152062049300C54627 /* BaseNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
+		AF6296162062049300C54627 /* BaseNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavViewController.m; sourceTree = "<group>"; };
+		AF62961820625F1500C54627 /* BtnView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BtnView.h; sourceTree = "<group>"; };
+		AF62961920625F1500C54627 /* BtnView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BtnView.m; sourceTree = "<group>"; };
 		AFE3C5E42060FD7600EEF0F6 /* JHotelIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JHotelIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE3C5E72060FD7600EEF0F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AFE3C5E82060FD7600EEF0F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +106,10 @@
 				AFE3C60B20611B9700EEF0F6 /* HomeViewController.m */,
 				AFE3C60D20611BC500EEF0F6 /* OrderViewController.h */,
 				AFE3C60E20611BC500EEF0F6 /* OrderViewController.m */,
+				AF6296122061FF6200C54627 /* BaseViewController.h */,
+				AF6296132061FF6200C54627 /* BaseViewController.m */,
+				AF6296152062049300C54627 /* BaseNavViewController.h */,
+				AF6296162062049300C54627 /* BaseNavViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -104,6 +117,8 @@
 		AFE3C602206113B700EEF0F6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF62961820625F1500C54627 /* BtnView.h */,
+				AF62961920625F1500C54627 /* BtnView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE3C5EC2060FD7600EEF0F6 /* ViewController.m in Sources */,
+				AF6296142061FF6200C54627 /* BaseViewController.m in Sources */,
+				AF6296172062049300C54627 /* BaseNavViewController.m in Sources */,
+				AF62961A20625F1500C54627 /* BtnView.m in Sources */,
 				AFE3C5F72060FD7600EEF0F6 /* main.m in Sources */,
 				AFE3C5E92060FD7600EEF0F6 /* AppDelegate.m in Sources */,
 				AFE3C609206118EF00EEF0F6 /* MainViewController.m in Sources */,
