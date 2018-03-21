@@ -52,7 +52,7 @@
     [self addChildViewController:nav_order];
     
     self.tabBar.tintColor = J_colorMain;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.tabBar.backgroundColor = [UIColor whiteColor];
     
     __weak typeof (self) weakself = self;
     self.vc_home.exitApp = ^() {
