@@ -18,12 +18,23 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"选择城市";
+    
+    // 返回按钮
+    UIImage* image = [UIImage imageNamed:@"arrowLeft_24pt"];
+    // 告诉系统使用这张图片时不进行默认的渲染
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem * bbi_back = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(backLastPage)];
+    self.navigationItem.leftBarButtonItem = bbi_back;
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    // 显示 navigation
-//    self.navigationController.navigationBar.hidden = false;
-    
+//-(void)viewWillAppear:(BOOL)animated {
+//    // 显示 navigation
+////    self.navigationController.navigationBar.hidden = false;
+//
+//}
+
+-(void)backLastPage {
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 - (void)didReceiveMemoryWarning {

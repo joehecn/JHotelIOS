@@ -18,6 +18,17 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"我的订单";
+    
+    // 返回首页按钮
+    UIImage* image = [UIImage imageNamed:@"arrowLeft_24pt"];
+    // 告诉系统使用这张图片时不进行默认的渲染
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem * bbi_backHome = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(backHomePage)];
+    self.navigationItem.leftBarButtonItem = bbi_backHome;
+}
+
+-(void)backHomePage {
+    self.tabBarController.selectedIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning {

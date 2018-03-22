@@ -53,29 +53,6 @@
     
     self.tabBar.tintColor = J_colorMain;
     self.tabBar.backgroundColor = [UIColor whiteColor];
-    
-    __weak typeof (self) weakself = self;
-    self.vc_home.exitApp = ^() {
-        weakself.tabBar.hidden = true;
-        [weakself exitApplication];
-    };
-}
-
-// 退出程序
-- (void)exitApplication {
-        UIWindow *window = [[Util getInstance]getApp].window;
-        [UIView beginAnimations:@"exitApplication" context:nil];
-        [UIView setAnimationDuration:0.5];
-        [UIView setAnimationDelegate:self];
-        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:window cache:NO];
-        [UIView setAnimationDidStopSelector:@selector(animationFinished:finished:context:)];
-        window.bounds = CGRectMake(0, 0, 0, 0);
-        [UIView commitAnimations];
-}
-- (void)animationFinished:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-    if ([animationID compare:@"exitApplication"] == 0) {
-        exit(0);
-    }
 }
 
 - (void)didReceiveMemoryWarning {

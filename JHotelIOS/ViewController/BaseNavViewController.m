@@ -8,6 +8,7 @@
 
 #import "BaseNavViewController.h"
 #import "Util.h"
+#import "HomeViewController.h"
 
 @interface BaseNavViewController ()
 
@@ -41,6 +42,16 @@
 //-(UIViewController *)childViewControllerForStatusBarHidden {
 //    return self.topViewController;
 //}
+
+// 隐藏 tabbar
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    NSLog(@"pushViewController %@", viewController);
+    if (![viewController isKindOfClass:[HomeViewController class]]) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+
+    [super pushViewController:viewController animated:animated];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

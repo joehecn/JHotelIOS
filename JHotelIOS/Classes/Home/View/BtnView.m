@@ -28,8 +28,7 @@
         iv_img_y = (h - 24) / 2;
     }
 
-    self = [super initWithFrame:CGRectMake(point.x, y, width, h)];
-    if (self) {
+    if (self = [super initWithFrame:CGRectMake(point.x, y, width, h)]) {
         UIImageView* iv_left = [[UIImageView alloc]initWithFrame:CGRectMake(8, iv_img_y, 24, 24)];
         iv_left.image = [UIImage imageNamed:imageName];
         [self addSubview:iv_left];

@@ -27,6 +27,7 @@
 
 -(void)enterApp {
     vc_main = [[MainViewController alloc]init];
+    // 切换根控制器
     [[Util getInstance]getApp].window.rootViewController = vc_main;
 }
 

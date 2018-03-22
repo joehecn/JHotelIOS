@@ -29,6 +29,7 @@
 @property(nonatomic, strong)UIButton* bt_search;
 
 @property(nonatomic, strong)UIView* jv_promise;
+@property(nonatomic, strong)UIView* jv_promiseModal;
 
 @property(nonatomic, strong)CitySelectViewController* vc_citySelect;
 
@@ -150,11 +151,6 @@
         
         // 选择城市
         [_v_main addSubview:self.bv_chooseCity];
-
-        __weak typeof (self) weakself = self;
-        self.bv_chooseCity.touchesBeganBtnView = ^() {
-            [weakself.navigationController pushViewController:weakself.vc_citySelect animated:true];
-        };
         
         // label 深圳
         [_v_main addSubview:self.lb_city];
@@ -177,7 +173,10 @@
         // 搜索按钮
         [_v_main addSubview:self.bt_search];
         
-//        NSLog(@"%@", NSStringFromCGRect(self.bt_search.frame));
+        __weak typeof (self) weakself = self;
+        self.bv_chooseCity.touchesBeganBtnView = ^() {
+            [weakself.navigationController pushViewController:weakself.vc_citySelect animated:true];
+        };
     }
     return _v_main;
 }
@@ -204,13 +203,79 @@
         CGFloat lb_x = img_x + img_w + 10;
         lb_promise.frame = CGRectMake(lb_x, 0, lb_width, 24);
         [_jv_promise addSubview:lb_promise];
+        
+        // 点击事件
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showPromiseModal)];
+        [_jv_promise addGestureRecognizer:recognizer];
     }
     return _jv_promise;
+}
+
+-(UIView *)jv_promiseModal {
+    if (!_jv_promiseModal) {
+        _jv_promiseModal = [[UIView alloc]initWithFrame:J_screenBounds];
+        
+        // 遮罩层
+        UIView* v_cover = [[UIView alloc]initWithFrame:J_screenBounds];
+        v_cover.backgroundColor = [UIColor blackColor];
+        v_cover.alpha = 0.5;
+        [_jv_promiseModal addSubview:v_cover];
+        
+        // 文字图层
+        UIView* v_text = [[UIView alloc]initWithFrame:CGRectMake(0, 0, J_w * 0.8, J_h * 0.7)];
+        v_text.center = v_cover.center;
+        v_text.backgroundColor = [UIColor whiteColor];
+        v_text.layer.cornerRadius = 5;
+        
+        UIButton* bt_close = [[UIButton alloc]initWithFrame:CGRectMake(v_text.frame.size.width - 24 - 16, 16, 24, 24)];
+        [bt_close setBackgroundImage:[UIImage imageNamed:@"close_24pt"] forState:UIControlStateNormal];
+        [v_text addSubview:bt_close];
+        
+        UILabel* lb_title = [[UILabel alloc]initWithFrame:CGRectMake(16, 16, v_text.frame.size.width - 16 * 2 - 24 - 16, 24)];
+        lb_title.text = @"有问题, 我赔你";
+        lb_title.textColor = J_colorGrayDark;
+        lb_title.font = [UIFont systemFontOfSize:20];
+        [v_text addSubview:lb_title];
+        
+        UILabel* lb_subtitle = [[UILabel alloc]initWithFrame:CGRectMake(16, lb_title.frame.size.height + lb_title.frame.origin.y, v_text.frame.size.width - 16 * 2, 24)];
+        lb_subtitle.text = @"到店有房, 酒店预定有保障";
+        lb_subtitle.textColor = J_colorGrayDark;
+        lb_subtitle.font = J_fontBig;
+        [v_text addSubview:lb_subtitle];
+        
+        // 分隔线
+        UIView* lineView = [[UIView alloc]initWithFrame:CGRectMake(16, lb_subtitle.frame.size.height + lb_subtitle.frame.origin.y + 8, v_text.frame.size.width - 16 * 2, 1)];
+        lineView.backgroundColor = J_colorGrayLight;
+        [v_text addSubview:lineView];
+        
+        // 脚注
+        UILabel* lb_foot = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, v_text.frame.size.width - 16 * 2, 10000)];
+        
+        lb_foot.text = @"注：如未及时联系官网自行入住其他酒店，视为您放弃了保障计划权利。";
+        lb_foot.font = J_fontSmall;
+        lb_foot.numberOfLines = 0;
+        [lb_foot sizeToFit];
+        CGFloat h = lb_foot.frame.size.height;
+        
+        lb_foot.frame = CGRectMake(16, v_text.frame.size.height - h - 16, v_text.frame.size.width - 16 * 2, h);
+        lb_foot.textColor = J_colorGrayDark;
+        
+        [v_text addSubview:lb_foot];
+        
+        // 分隔线 逆向
+        lineView = [[UIView alloc]initWithFrame:CGRectMake(16, lb_foot.frame.origin.y - 9, v_text.frame.size.width - 16 * 2, 1)];
+        lineView.backgroundColor = J_colorGrayLight;
+        [v_text addSubview:lineView];
+        
+        [_jv_promiseModal addSubview:v_text];
+    }
+    return _jv_promiseModal;
 }
 
 -(CitySelectViewController *)vc_citySelect {
     if (!_vc_citySelect) {
         _vc_citySelect = [[CitySelectViewController alloc]init];
+//        _vc_citySelect.view.tag = 1;
     }
     return _vc_citySelect;
 }
@@ -230,12 +295,13 @@
     [util setNavigationBarHeight:self.navigationController.navigationBar.frame.size.height];
     
     self.navigationItem.title = @"四季优美酒店";
+    
     // 退出按钮
     UIImage* image = [UIImage imageNamed:@"logout_24pt"];
     // 告诉系统使用这张图片时不进行默认的渲染
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem * bbi_loginout = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(exitApplication)];
-    self.navigationItem.leftBarButtonItem = bbi_loginout;
+    self.navigationItem.rightBarButtonItem = bbi_loginout;
     
     // 自定义头部
 //    [self.view addSubview:self.v_header];
@@ -250,15 +316,32 @@
     [self.view addSubview:self.jv_promise];
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    // 隐藏 navigation
-//    self.navigationController.navigationBar.hidden = true;
+//-(void)viewWillAppear:(BOOL)animated {
+//    // 隐藏 navigation
+////    self.navigationController.navigationBar.hidden = true;
+//}
+
+- (void)showPromiseModal {
+    // 添加到最外层的控制器
+    [self.tabBarController.view addSubview:self.jv_promiseModal];
 }
 
 // 退出程序
 - (void)exitApplication {
-    if (self.exitApp) {
-        self.exitApp();
+    self.tabBarController.tabBar.hidden = true;
+
+    UIWindow *window = [[Util getInstance]getApp].window;
+    [UIView beginAnimations:@"exitApplication" context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:window cache:NO];
+    [UIView setAnimationDidStopSelector:@selector(animationFinished:finished:context:)];
+    window.bounds = CGRectMake(0, 0, 0, 0);
+    [UIView commitAnimations];
+}
+- (void)animationFinished:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+    if ([animationID compare:@"exitApplication"] == 0) {
+        exit(0);
     }
 }
 

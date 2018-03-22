@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  OrderViewController.h
 //  JHotelIOS
 //
 //  Created by 何苗 on 2018/3/20.
@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface HomeViewController : BaseViewController
+@interface OrderViewController : BaseViewController
 
-// block 退出程序
-@property(nonatomic, copy) void(^exitApp)(void);
 
 @end

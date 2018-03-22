@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Util.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,19 @@
 // 应用加载完毕
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 创建 window
+    self.window = [[UIWindow alloc] initWithFrame:J_screenBounds];
+    
+    // 创建 ViewController
+    ViewController* viewController = [[ViewController alloc]init];
+    
+    // window 设置根控制器
+    self.window.rootViewController = viewController;
+    
+    // window 显示
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
