@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "Util.h"
 #import "BtnView.h"
+#import "CitySelectViewController.h"
 
 @interface HomeViewController () {
     Util *util;
@@ -16,7 +17,7 @@
     CGFloat w_main;
 }
 
-@property(nonatomic, strong)UIView* v_header;
+//@property(nonatomic, strong)UIView* v_header;
 @property(nonatomic, strong)UIImageView* iv_bg;
 
 @property(nonatomic, strong)UIView* v_main;
@@ -29,36 +30,39 @@
 
 @property(nonatomic, strong)UIView* jv_promise;
 
+@property(nonatomic, strong)CitySelectViewController* vc_citySelect;
+
 @end
 
 @implementation HomeViewController
 
-- (UIView *)v_header {
-    if (!_v_header) {
-        CGFloat y = [util getSafeYHasNavigationBar:false];
-        CGFloat h = [util getNavigationBarHeight];
-        _v_header = [[UIView alloc]initWithFrame:CGRectMake(0, y, J_w, h)];
-        
-        // 返回键
-        UIButton* bt_back = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 24, 24)];
-        [bt_back setBackgroundImage:[UIImage imageNamed:@"arrowLeft_24pt"] forState:UIControlStateNormal];
-        [bt_back addTarget:self action:@selector(exitApplication) forControlEvents:UIControlEventTouchUpInside];
-        [_v_header addSubview:bt_back];
-        
-        // 标题
-        UILabel* lb_title = [[UILabel alloc]initWithFrame:CGRectMake((J_w - 200) / 2, 10, 200, 24)];
-        lb_title.text = @"四季优美酒店";
-        lb_title.textColor = [UIColor whiteColor];
-        lb_title.textAlignment = NSTextAlignmentCenter;
-        lb_title.font = J_fontNav;
-        [_v_header addSubview:lb_title];
-    }
-    return _v_header;
-}
+//- (UIView *)v_header {
+//    if (!_v_header) {
+//        CGFloat y = [util getSafeYHasNavigationBar:false];
+//        CGFloat h = [util getNavigationBarHeight];
+//        _v_header = [[UIView alloc]initWithFrame:CGRectMake(0, y, J_w, h)];
+//
+//        // 返回键
+//        UIButton* bt_back = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 24, 24)];
+//        [bt_back setBackgroundImage:[UIImage imageNamed:@"arrowLeft_24pt"] forState:UIControlStateNormal];
+//        [bt_back addTarget:self action:@selector(exitApplication) forControlEvents:UIControlEventTouchUpInside];
+//        [_v_header addSubview:bt_back];
+//
+//        // 标题
+//        UILabel* lb_title = [[UILabel alloc]initWithFrame:CGRectMake((J_w - 200) / 2, 10, 200, 24)];
+//        lb_title.text = @"四季优美酒店";
+//        lb_title.textColor = [UIColor whiteColor];
+//        lb_title.textAlignment = NSTextAlignmentCenter;
+//        lb_title.font = J_fontNav;
+//        [_v_header addSubview:lb_title];
+//    }
+//    return _v_header;
+//}
 
 -(UIImageView *)iv_bg {
     if (!_iv_bg) {
-        CGFloat y = self.v_header.frame.origin.y + self.v_header.frame.size.height;
+//        CGFloat y = self.v_header.frame.origin.y + self.v_header.frame.size.height;
+        CGFloat y = [util getSafeYHasNavigationBar:true];
         CGFloat w = J_w * 0.6;
         CGFloat h = w * 0.6;
         CGFloat x = (J_w - w) / 2;
@@ -146,9 +150,10 @@
         
         // 选择城市
         [_v_main addSubview:self.bv_chooseCity];
-//        __weak typeof (self) weakself = self;
+
+        __weak typeof (self) weakself = self;
         self.bv_chooseCity.touchesBeganBtnView = ^() {
-            NSLog(@"选择城市");
+            [weakself.navigationController pushViewController:weakself.vc_citySelect animated:true];
         };
         
         // label 深圳
@@ -203,6 +208,13 @@
     return _jv_promise;
 }
 
+-(CitySelectViewController *)vc_citySelect {
+    if (!_vc_citySelect) {
+        _vc_citySelect = [[CitySelectViewController alloc]init];
+    }
+    return _vc_citySelect;
+}
+
 -(UIView *)getLineViewWithY:(CGFloat)y {
     UIView* lineView = [[UIView alloc]initWithFrame:CGRectMake(0, y, w_main, 1)];
     lineView.backgroundColor = J_colorGrayLight;
@@ -217,11 +229,16 @@
     // 获取并储存导航栏高度 一般为 44
     [util setNavigationBarHeight:self.navigationController.navigationBar.frame.size.height];
     
-    // 隐藏 navigation
-    self.navigationController.navigationBar.hidden = true;
+    self.navigationItem.title = @"四季优美酒店";
+    // 退出按钮
+    UIImage* image = [UIImage imageNamed:@"logout_24pt"];
+    // 告诉系统使用这张图片时不进行默认的渲染
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem * bbi_loginout = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(exitApplication)];
+    self.navigationItem.leftBarButtonItem = bbi_loginout;
     
     // 自定义头部
-    [self.view addSubview:self.v_header];
+//    [self.view addSubview:self.v_header];
     
     // 背景图
     [self.view addSubview:self.iv_bg];
@@ -231,6 +248,11 @@
     
     // 保障
     [self.view addSubview:self.jv_promise];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    // 隐藏 navigation
+//    self.navigationController.navigationBar.hidden = true;
 }
 
 // 退出程序

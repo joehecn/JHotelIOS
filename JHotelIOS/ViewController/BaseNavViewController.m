@@ -7,6 +7,7 @@
 //
 
 #import "BaseNavViewController.h"
+#import "Util.h"
 
 @interface BaseNavViewController ()
 
@@ -18,7 +19,17 @@
     [super viewDidLoad];
 
     // 去掉顶部导航栏下面那条线
-    self.navigationBar.shadowImage = [UIImage new];
+    [self.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+    // 设置标题颜色
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+    // 设置渲染的颜色
+    [self.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    // 设置导航栏背景颜色
+    // 设置导航栏背景图片为一个空的image，这样就透明了
+    [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
 }
 
 // 状态栏文字颜色白色

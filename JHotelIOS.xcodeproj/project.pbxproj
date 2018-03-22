@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF18995E20635134007FF28D /* CitySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF18995D20635134007FF28D /* CitySelectViewController.m */; };
 		AF6296142061FF6200C54627 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6296132061FF6200C54627 /* BaseViewController.m */; };
 		AF6296172062049300C54627 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6296162062049300C54627 /* BaseNavViewController.m */; };
 		AF62961A20625F1500C54627 /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF62961920625F1500C54627 /* BtnView.m */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF18995C20635134007FF28D /* CitySelectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitySelectViewController.h; sourceTree = "<group>"; };
+		AF18995D20635134007FF28D /* CitySelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitySelectViewController.m; sourceTree = "<group>"; };
 		AF6296122061FF6200C54627 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		AF6296132061FF6200C54627 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		AF6296152062049300C54627 /* BaseNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
@@ -60,6 +63,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF18995F20637067007FF28D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		AFE3C5DB2060FD7600EEF0F6 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +90,7 @@
 		AFE3C5E62060FD7600EEF0F6 /* JHotelIOS */ = {
 			isa = PBXGroup;
 			children = (
+				AF18995F20637067007FF28D /* Other */,
 				AFE3C603206113C400EEF0F6 /* Motel */,
 				AFE3C602206113B700EEF0F6 /* View */,
 				AFE3C601206113A400EEF0F6 /* ViewController */,
@@ -110,6 +121,8 @@
 				AF6296132061FF6200C54627 /* BaseViewController.m */,
 				AF6296152062049300C54627 /* BaseNavViewController.h */,
 				AF6296162062049300C54627 /* BaseNavViewController.m */,
+				AF18995C20635134007FF28D /* CitySelectViewController.h */,
+				AF18995D20635134007FF28D /* CitySelectViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -203,6 +216,7 @@
 			files = (
 				AFE3C5EC2060FD7600EEF0F6 /* ViewController.m in Sources */,
 				AF6296142061FF6200C54627 /* BaseViewController.m in Sources */,
+				AF18995E20635134007FF28D /* CitySelectViewController.m in Sources */,
 				AF6296172062049300C54627 /* BaseNavViewController.m in Sources */,
 				AF62961A20625F1500C54627 /* BtnView.m in Sources */,
 				AFE3C5F72060FD7600EEF0F6 /* main.m in Sources */,

@@ -1,23 +1,29 @@
 //
-//  OrderViewController.m
+//  CitySelectViewController.m
 //  JHotelIOS
 //
-//  Created by 何苗 on 2018/3/20.
+//  Created by 何苗 on 2018/3/22.
 //  Copyright © 2018年 joehe. All rights reserved.
 //
 
-#import "OrderViewController.h"
+#import "CitySelectViewController.h"
 
-@interface OrderViewController ()
+@interface CitySelectViewController ()
 
 @end
 
-@implementation OrderViewController
+@implementation CitySelectViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"我的订单";
+    self.navigationItem.title = @"选择城市";
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    // 显示 navigation
+//    self.navigationController.navigationBar.hidden = false;
+    
 }
 
 - (void)didReceiveMemoryWarning {

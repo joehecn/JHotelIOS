@@ -18,7 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 去掉返回按钮文字
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backItem;
+    
     self.view.backgroundColor = J_colorMain;
+    
 }
 
 // 状态栏文字颜色白色 相关代码

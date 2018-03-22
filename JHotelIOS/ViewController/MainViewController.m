@@ -13,8 +13,8 @@
 #import "Util.h"
 
 @interface MainViewController () {
-    UINavigationController* nav_home;
-    UINavigationController* nav_order;
+    BaseNavViewController* nav_home;
+    BaseNavViewController* nav_order;
 }
 
 @property(nonatomic, strong)HomeViewController* vc_home;
