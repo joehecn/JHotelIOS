@@ -12,6 +12,7 @@
 		AF6296142061FF6200C54627 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6296132061FF6200C54627 /* BaseViewController.m */; };
 		AF6296172062049300C54627 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6296162062049300C54627 /* BaseNavViewController.m */; };
 		AF62961A20625F1500C54627 /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF62961920625F1500C54627 /* BtnView.m */; };
+		AF863D602063DD1B0043685A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = AF863D5F2063DD1B0043685A /* UIView+Frame.m */; };
 		AFE3C5E92060FD7600EEF0F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C5E82060FD7600EEF0F6 /* AppDelegate.m */; };
 		AFE3C5EC2060FD7600EEF0F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3C5EB2060FD7600EEF0F6 /* ViewController.m */; };
 		AFE3C5F12060FD7600EEF0F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE3C5F02060FD7600EEF0F6 /* Assets.xcassets */; };
@@ -34,6 +35,8 @@
 		AF6296162062049300C54627 /* BaseNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavViewController.m; sourceTree = "<group>"; };
 		AF62961820625F1500C54627 /* BtnView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BtnView.h; sourceTree = "<group>"; };
 		AF62961920625F1500C54627 /* BtnView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BtnView.m; sourceTree = "<group>"; };
+		AF863D5E2063DD1B0043685A /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		AF863D5F2063DD1B0043685A /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		AFE3C5E42060FD7600EEF0F6 /* JHotelIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JHotelIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE3C5E72060FD7600EEF0F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AFE3C5E82060FD7600EEF0F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -337,6 +340,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AF863D5D2063DCE00043685A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF863D5E2063DD1B0043685A /* UIView+Frame.h */,
+				AF863D5F2063DD1B0043685A /* UIView+Frame.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AFE3C5DB2060FD7600EEF0F6 = {
 			isa = PBXGroup;
 			children = (
@@ -359,9 +371,8 @@
 			children = (
 				AF18996620637B02007FF28D /* Classes */,
 				AF18995F20637067007FF28D /* Other */,
-				AFE3C603206113C400EEF0F6 /* Motel */,
-				AFE3C602206113B700EEF0F6 /* View */,
 				AFE3C601206113A400EEF0F6 /* ViewController */,
+				AF863D5D2063DCE00043685A /* View */,
 				AFE3C5F02060FD7600EEF0F6 /* Assets.xcassets */,
 				AFE3C5F52060FD7600EEF0F6 /* Info.plist */,
 				AFE3C5F62060FD7600EEF0F6 /* main.m */,
@@ -378,20 +389,6 @@
 				AF6296162062049300C54627 /* BaseNavViewController.m */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		AFE3C602206113B700EEF0F6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AFE3C603206113C400EEF0F6 /* Motel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Motel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +466,7 @@
 				AF6296142061FF6200C54627 /* BaseViewController.m in Sources */,
 				AF18995E20635134007FF28D /* CitySelectViewController.m in Sources */,
 				AF6296172062049300C54627 /* BaseNavViewController.m in Sources */,
+				AF863D602063DD1B0043685A /* UIView+Frame.m in Sources */,
 				AF62961A20625F1500C54627 /* BtnView.m in Sources */,
 				AFE3C5F72060FD7600EEF0F6 /* main.m in Sources */,
 				AFE3C5E92060FD7600EEF0F6 /* AppDelegate.m in Sources */,

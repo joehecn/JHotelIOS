@@ -10,4 +10,6 @@
 
 @interface PromiseModalView : UIView
 
+- (void)show;
+
 @end
