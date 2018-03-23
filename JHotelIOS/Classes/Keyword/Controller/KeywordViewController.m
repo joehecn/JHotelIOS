@@ -1,33 +1,28 @@
 //
-//  CitySelectViewController.m
+//  KeywordViewController.m
 //  JHotelIOS
 //
-//  Created by 何苗 on 2018/3/22.
+//  Created by 何苗 on 2018/3/23.
 //  Copyright © 2018年 joehe. All rights reserved.
 //
 
-#import "CitySelectViewController.h"
+#import "KeywordViewController.h"
 
-@interface CitySelectViewController ()
+@interface KeywordViewController ()
 
 @end
 
-@implementation CitySelectViewController
+@implementation KeywordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     
-    self.navigationItem.title = @"选择城市";
+    self.navigationItem.title = @"搜索关键词";
     
     // 返回按钮
     self.navigationItem.leftBarButtonItem = self.bbi_back;
 }
-
-//-(void)viewWillAppear:(BOOL)animated {
-//    // 显示 navigation
-////    self.navigationController.navigationBar.hidden = false;
-//
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

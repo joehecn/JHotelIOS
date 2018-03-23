@@ -50,7 +50,7 @@
  * 获取并储存导航栏高度，全局只需要设置一次
  */
 -(void)setNavigationBarHeight:(CGFloat)height;
--(CGFloat)getNavigationBarHeight;
+//-(CGFloat)getNavigationBarHeight;
 /**
  * 获取顶部的安全高度
  */

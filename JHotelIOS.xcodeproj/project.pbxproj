@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		AF18995E20635134007FF28D /* CitySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF18995D20635134007FF28D /* CitySelectViewController.m */; };
 		AF1899872063BEA5007FF28D /* PromiseModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1899862063BEA5007FF28D /* PromiseModalView.m */; };
+		AF257E112064B7C3007FB217 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF257E102064B7C3007FB217 /* CalendarViewController.m */; };
+		AF257E142064B7EA007FB217 /* KeywordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF257E132064B7EA007FB217 /* KeywordViewController.m */; };
+		AF257E182064B80D007FB217 /* HotelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF257E172064B80D007FB217 /* HotelListViewController.m */; };
+		AF257E1C2064EBDA007FB217 /* CalendarHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF257E1B2064EBDA007FB217 /* CalendarHeadView.m */; };
+		AF257E1F20650775007FB217 /* CalendarViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF257E1E20650775007FB217 /* CalendarViewCell.m */; };
 		AF6296142061FF6200C54627 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6296132061FF6200C54627 /* BaseViewController.m */; };
 		AF6296172062049300C54627 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6296162062049300C54627 /* BaseNavViewController.m */; };
 		AF62961A20625F1500C54627 /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF62961920625F1500C54627 /* BtnView.m */; };
@@ -29,6 +34,16 @@
 		AF18995D20635134007FF28D /* CitySelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitySelectViewController.m; sourceTree = "<group>"; };
 		AF1899852063BEA5007FF28D /* PromiseModalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PromiseModalView.h; sourceTree = "<group>"; };
 		AF1899862063BEA5007FF28D /* PromiseModalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PromiseModalView.m; sourceTree = "<group>"; };
+		AF257E0F2064B7C3007FB217 /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		AF257E102064B7C3007FB217 /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		AF257E122064B7EA007FB217 /* KeywordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeywordViewController.h; sourceTree = "<group>"; };
+		AF257E132064B7EA007FB217 /* KeywordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeywordViewController.m; sourceTree = "<group>"; };
+		AF257E162064B80D007FB217 /* HotelListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelListViewController.h; sourceTree = "<group>"; };
+		AF257E172064B80D007FB217 /* HotelListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelListViewController.m; sourceTree = "<group>"; };
+		AF257E1A2064EBDA007FB217 /* CalendarHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarHeadView.h; sourceTree = "<group>"; };
+		AF257E1B2064EBDA007FB217 /* CalendarHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarHeadView.m; sourceTree = "<group>"; };
+		AF257E1D20650775007FB217 /* CalendarViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewCell.h; sourceTree = "<group>"; };
+		AF257E1E20650775007FB217 /* CalendarViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewCell.m; sourceTree = "<group>"; };
 		AF6296122061FF6200C54627 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		AF6296132061FF6200C54627 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		AF6296152062049300C54627 /* BaseNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
@@ -85,7 +100,9 @@
 				AF18998020638616007FF28D /* Main */,
 				AF18997620637B02007FF28D /* Home */,
 				AF18996C20637B02007FF28D /* City */,
-				AF18997120637B02007FF28D /* Copy */,
+				AF257E092064B69A007FB217 /* Calendar */,
+				AF257E0A2064B6B1007FB217 /* Keyword */,
+				AF257E0B2064B70E007FB217 /* HotelList */,
 				AF18997B20637B02007FF28D /* Order */,
 			);
 			path = Classes;
@@ -167,45 +184,6 @@
 			sourceTree = "<group>";
 		};
 		AF18997020637B02007FF28D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AF18997120637B02007FF28D /* Copy */ = {
-			isa = PBXGroup;
-			children = (
-				AF18997220637B02007FF28D /* Controller */,
-				AF18997320637B02007FF28D /* Model */,
-				AF18997420637B02007FF28D /* Other */,
-				AF18997520637B02007FF28D /* View */,
-			);
-			path = Copy;
-			sourceTree = "<group>";
-		};
-		AF18997220637B02007FF28D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AF18997320637B02007FF28D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		AF18997420637B02007FF28D /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		AF18997520637B02007FF28D /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -340,6 +318,69 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AF257E092064B69A007FB217 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				AF257E0C2064B760007FB217 /* Controller */,
+				AF257E192064EB10007FB217 /* View */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		AF257E0A2064B6B1007FB217 /* Keyword */ = {
+			isa = PBXGroup;
+			children = (
+				AF257E0D2064B776007FB217 /* Controller */,
+			);
+			path = Keyword;
+			sourceTree = "<group>";
+		};
+		AF257E0B2064B70E007FB217 /* HotelList */ = {
+			isa = PBXGroup;
+			children = (
+				AF257E0E2064B785007FB217 /* Controller */,
+			);
+			path = HotelList;
+			sourceTree = "<group>";
+		};
+		AF257E0C2064B760007FB217 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF257E0F2064B7C3007FB217 /* CalendarViewController.h */,
+				AF257E102064B7C3007FB217 /* CalendarViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AF257E0D2064B776007FB217 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF257E122064B7EA007FB217 /* KeywordViewController.h */,
+				AF257E132064B7EA007FB217 /* KeywordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AF257E0E2064B785007FB217 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF257E162064B80D007FB217 /* HotelListViewController.h */,
+				AF257E172064B80D007FB217 /* HotelListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AF257E192064EB10007FB217 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF257E1A2064EBDA007FB217 /* CalendarHeadView.h */,
+				AF257E1B2064EBDA007FB217 /* CalendarHeadView.m */,
+				AF257E1D20650775007FB217 /* CalendarViewCell.h */,
+				AF257E1E20650775007FB217 /* CalendarViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AF863D5D2063DCE00043685A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,12 +508,17 @@
 				AF18995E20635134007FF28D /* CitySelectViewController.m in Sources */,
 				AF6296172062049300C54627 /* BaseNavViewController.m in Sources */,
 				AF863D602063DD1B0043685A /* UIView+Frame.m in Sources */,
+				AF257E112064B7C3007FB217 /* CalendarViewController.m in Sources */,
 				AF62961A20625F1500C54627 /* BtnView.m in Sources */,
+				AF257E1C2064EBDA007FB217 /* CalendarHeadView.m in Sources */,
 				AFE3C5F72060FD7600EEF0F6 /* main.m in Sources */,
 				AFE3C5E92060FD7600EEF0F6 /* AppDelegate.m in Sources */,
+				AF257E142064B7EA007FB217 /* KeywordViewController.m in Sources */,
+				AF257E182064B80D007FB217 /* HotelListViewController.m in Sources */,
 				AFE3C609206118EF00EEF0F6 /* MainViewController.m in Sources */,
 				AFE3C60F20611BC500EEF0F6 /* OrderViewController.m in Sources */,
 				AFE3C6062061143000EEF0F6 /* Util.m in Sources */,
+				AF257E1F20650775007FB217 /* CalendarViewCell.m in Sources */,
 				AFE3C60C20611B9700EEF0F6 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

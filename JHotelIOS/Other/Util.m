@@ -44,9 +44,9 @@ static id _instance;
     }
     navigationBarHeight = height;
 }
--(CGFloat)getNavigationBarHeight {
-    return navigationBarHeight;
-}
+//-(CGFloat)getNavigationBarHeight {
+//    return navigationBarHeight;
+//}
 // 获取顶部的安全高度
 -(CGFloat)getSafeYHasNavigationBar:(BOOL)hasNavigationBar {
     if (hasNavigationBar) {

@@ -37,6 +37,22 @@
 //    return NO;
 //}
 
+- (UIBarButtonItem *)bbi_back {
+    if (!_bbi_back) {
+        // 返回按钮
+        UIImage* image = [UIImage imageNamed:@"arrowLeft_24pt"];
+        // 告诉系统使用这张图片时不进行默认的渲染
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _bbi_back = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(backLastPage)];
+        
+    }
+    return _bbi_back;
+}
+
+- (void)backLastPage {
+    [self.navigationController popViewControllerAnimated:true];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

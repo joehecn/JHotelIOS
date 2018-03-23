@@ -10,7 +10,12 @@
 #import "Util.h"
 #import "UIView+Frame.h"
 #import "BtnView.h"
+
 #import "CitySelectViewController.h"
+#import "CalendarViewController.h"
+#import "KeywordViewController.h"
+#import "HotelListViewController.h"
+
 #import "PromiseModalView.h"
 
 @interface HomeViewController () {
@@ -32,6 +37,9 @@
 @property(nonatomic, strong)PromiseModalView* jv_promiseModal;
 
 @property(nonatomic, strong)CitySelectViewController* vc_citySelect;
+@property(nonatomic, strong)CalendarViewController* vc_calendar;
+@property(nonatomic, strong)KeywordViewController* vc_keyword;
+@property(nonatomic, strong)HotelListViewController* vc_hotelList;
 
 @end
 
@@ -116,10 +124,21 @@
         
         // 搜索按钮
         [_v_main addSubview:self.bt_search];
+        [self.bt_search addTarget:self action:@selector(searchAction) forControlEvents:UIControlEventTouchUpInside];
         
+        // 跳转页面
         __weak typeof (self) weakself = self;
+        // 选择城市
         self.bv_chooseCity.touchesBeganBtnView = ^() {
             [weakself.navigationController pushViewController:weakself.vc_citySelect animated:true];
+        };
+        // 日历
+        self.bv_chooseDates.touchesBeganBtnView = ^() {
+            [weakself.navigationController pushViewController:weakself.vc_calendar animated:true];
+        };
+        // 关键词
+        self.bv_keyword.touchesBeganBtnView =^() {
+            [weakself.navigationController pushViewController:weakself.vc_keyword animated:true];
         };
     }
     return _v_main;
@@ -185,6 +204,10 @@
     return _bt_search;
 }
 
+-(void)searchAction {
+    [self.navigationController pushViewController:self.vc_hotelList animated:true];
+}
+
 #pragma mark -- 保障
 -(UIView *)jv_promise {
     if (!_jv_promise) {
@@ -226,9 +249,26 @@
 -(CitySelectViewController *)vc_citySelect {
     if (!_vc_citySelect) {
         _vc_citySelect = [[CitySelectViewController alloc]init];
-//        _vc_citySelect.view.tag = 1;
     }
     return _vc_citySelect;
+}
+-(CalendarViewController *)vc_calendar {
+    if (!_vc_calendar) {
+        _vc_calendar = [[CalendarViewController alloc]init];
+    }
+    return _vc_calendar;
+}
+-(KeywordViewController *)vc_keyword {
+    if (!_vc_keyword) {
+        _vc_keyword = [[KeywordViewController alloc]init];
+    }
+    return _vc_keyword;
+}
+-(HotelListViewController *)vc_hotelList {
+    if (!_vc_hotelList) {
+        _vc_hotelList = [[HotelListViewController alloc]init];
+    }
+    return _vc_hotelList;
 }
 
 -(UIView *)getLineViewWithY:(CGFloat)y {
